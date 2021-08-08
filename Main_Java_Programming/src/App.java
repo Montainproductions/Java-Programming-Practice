@@ -5,7 +5,6 @@ public class App{
     public App(){
         MainFrame appFrame = new MainFrame();
         appFrame.init();
-
     }
 
     /* Start of methods for challenges. */
