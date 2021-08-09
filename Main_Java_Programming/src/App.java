@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.*;
 
 public class App{
     public App(){
         MainFrame appFrame = new MainFrame();
-        appFrame.init();
+        appFrame.initPopUp();
+        System.out.println("Hello World");
     }
 
     /* Start of methods for challenges. */
