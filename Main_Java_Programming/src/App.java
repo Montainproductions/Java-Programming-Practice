@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import javax.swing.*;
 
 public class App{
     public App(){
         MainFrame appFrame = new MainFrame();
         appFrame.initPopUp();
-        System.out.println("Hello World");
+        //System.out.println("Hello World");
     }
 
     /* Start of methods for challenges. */
