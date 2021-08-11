@@ -4,7 +4,7 @@ import java.util.Collections;
 public class App{
     public App(){
         MainFrame appFrame = new MainFrame();
-        appFrame.initPopUp();
+        appFrame.init();
         //System.out.println("Hello World");
     }
 
@@ -105,8 +105,6 @@ public class App{
 
     }
 
-    /* Extra methods made to work on challenge methods above. */
-
     public int min(int[] array){
         //Check Statistics problem above
         int lowestNumb = 1000000;
@@ -126,10 +124,8 @@ public class App{
         return largestNumb;
     }
 
-    public int range(int[] largestNumbArray, int[] lowestNumbArray){
+    public int range(int largestNumb, int lowestNumb){
         //Check Statistics problem above
-        int largestNumb = max(largestNumbArray);
-        int lowestNumb = min(lowestNumbArray);
         int rangeNumb = largestNumb - lowestNumb;
 
         return rangeNumb;
