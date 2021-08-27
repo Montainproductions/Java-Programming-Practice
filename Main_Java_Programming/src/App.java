@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.lang.Math;
 
 public class App{
     public App(){
         MainFrame appFrame = new MainFrame();
         appFrame.init();
+        stirlingsEquation(5);
         //System.out.println("Hello World");
     }
 
@@ -129,6 +131,30 @@ public class App{
         int rangeNumb = largestNumb - lowestNumb;
 
         return rangeNumb;
+    }
+
+    public void stirlingAproximation(int N) {
+        /*
+        * Problem: https://open.kattis.com/problems/stirlingsapproximation
+        * Date Started: 14/08/2021
+        * Date Ended: 14/08/2021
+        */
+        int factNumber = factorialOfN(N);
+        double stirEqu = stirlingsEquation(N);
+
+    }
+
+    public int factorialOfN(int N){
+        if (N == 0){return 1;}
+        else{return(N * factorialOfN(N-1));}
+    }
+
+    public double stirlingsEquation(int N) {
+        double sqrRoot = Math.sqrt(2*Math.PI*N);
+        double exponential = Math.pow(N, N)/Math.exp(N);
+        double sOfN = sqrRoot * exponential;
+        return sOfN;
+        //System.out.println(sOfN);
     }
 
     public static void main(String[] args){App f = new App();};

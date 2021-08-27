@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 //import javax.swing.JButton;
 //import javax.swing.WindowConstants;
 
@@ -13,33 +15,34 @@ public class MainFrame extends JFrame{
     /* Set up pop up window */
     public void init(){
         //Create popup and have it full screen and close when pressing X
-        //myFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         myFrame.setPreferredSize(new Dimension(600, 500));
         myFrame.pack();
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        reasonEntering();
-
-        /*JTextField t1,t2;  
-        t1=new JTextField("Welcome to Javatpoint.");  
-        t1.setBounds(50,100, 200,30);  
-        t2=new JTextField("AWT Tutorial");  
-        t2.setBounds(50,150, 200,30);  
-        myFrame.add(t1); myFrame.add(t2);*/
-
-        enterButton();
-        closeButton();
+        starterPage();
 
         myFrame.setLayout(null);
         myFrame.setVisible(true);
     }
 
-    public void reasonEntering() {
-        String[] possibleMethods = {"", "Internet Plan", "Balloon Inflation", "Mixed Fraction", "Minimum", "Range"};
+    public void starterPage(){
+        JButton enterButton = new JButton("Enter");
+        enterButton.setFocusable(false);
+        enterButton.setBounds(180,400,buttonWidth,buttonHeight); //setBounds(X Coordinates, Y Coordinates, Width, Height)
+        myFrame.add(enterButton);
 
+        String[] possibleMethods = {"", "Balloon Inflation", "Internet Plan", "Minimum", "Mixed Fraction", "Range"};
         final JComboBox<String> reasonEntering = new JComboBox<String>(possibleMethods);
-        reasonEntering.setBounds(50, 100, 200, 30);
+        reasonEntering.setBounds(200, 150, 200, 30);
         myFrame.add(reasonEntering);
+
+        enterButton.addActionListener(new ActionListener() {  
+            public void actionPerformed(ActionEvent e) {       
+                System.out.println("Programming language Selected: " + reasonEntering.getItemAt(reasonEntering.getSelectedIndex()));
+                //label.setText(data);
+            }
+        });
+        closeButton();
     }
 
     public void enterButton() {
@@ -48,6 +51,7 @@ public class MainFrame extends JFrame{
         enterButton.setFocusable(false);
         enterButton.setBounds(180,400,buttonWidth,buttonHeight); //setBounds(X Coordinates, Y Coordinates, Width, Height)
         myFrame.add(enterButton);
+        enterButton.addActionListener(e -> {myFrame.dispose();});
     }
 
     public void closeButton() {
