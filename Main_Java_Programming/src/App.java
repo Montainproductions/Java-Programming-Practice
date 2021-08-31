@@ -58,6 +58,7 @@ public class App{
         * Date Started: 09/05/2021
         * Date Finished: 10/05/2021
         */
+        
         Collections.sort(gasArray);
         float fraction = 1;
 
@@ -133,7 +134,7 @@ public class App{
         return rangeNumb;
     }
 
-    public void stirlingAproximation(int N) {
+    public void stirlingAproximation(int N){
         /*
         * Problem: https://open.kattis.com/problems/stirlingsapproximation
         * Date Started: 14/08/2021
