@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class MainFrame extends JFrame{
     JFrame myFrame = new JFrame("Math/Life Calculator");
@@ -25,22 +24,22 @@ public class MainFrame extends JFrame{
     /* Set up pop up window */
     public void init(){
         //Create popup and have it full screen and close when pressing X
-        myFrame.setPreferredSize(new Dimension(600, 500));
+        myFrame.setPreferredSize(new Dimension(600, 600));
         myFrame.pack();
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         starterPage();
 
+        closeButton();
         myFrame.setLayout(null);
         myFrame.setVisible(true);
     }
 
     public void starterPage(){
-        reasonEntering.setBounds(200, 150, 200, 30);
+        reasonEntering.setVisible(true);
+        reasonEntering.setBounds(0, 0, buttonWidth, buttonHeight);
         myFrame.add(reasonEntering);
-
-        methodChoosen();
-        closeButton();
+        //methodChoosen();
     }
 
     public void nextPageSetUp(String problemToSolve){
@@ -161,8 +160,10 @@ public class MainFrame extends JFrame{
         //Close button
         JButton closeButton = new JButton("Close");
         closeButton.setFocusable(false);
-        closeButton.setBounds(330,400,buttonWidth,buttonHeight); //setBounds(X Coordinates, Y Coordinates, Width, Height)
+        closeButton.setBounds(260,500,buttonWidth,buttonHeight); //setBounds(X Coordinates, Y Coordinates, Width, Height)
         myFrame.add(closeButton);
         closeButton.addActionListener(e -> {myFrame.dispose();});
     }
+
+    //public static void main(String[] args){MainGuiApp f = new MainGuiApp();};
 }

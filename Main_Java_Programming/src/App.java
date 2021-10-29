@@ -3,12 +3,7 @@ import java.util.Collections;
 import java.lang.Math;
 
 public class App{
-    public App(){
-        MainFrame appFrame = new MainFrame();
-        appFrame.init();
-        stirlingsEquation(5);
-        //System.out.println("Hello World");
-    }
+    public App(){}
 
     /* Start of methods for challenges. */
 
@@ -160,5 +155,5 @@ public class App{
 
 
 
-    public static void main(String[] args){App f = new App();};
+    //public static void main(String[] args){App f = new App();};
 }
