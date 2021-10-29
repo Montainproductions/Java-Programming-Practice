@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainFrame extends JFrame{
     JFrame myFrame = new JFrame("Math/Life Calculator");
@@ -121,9 +124,16 @@ public class MainFrame extends JFrame{
                 }else{
                     String currentGasAmount = gasAmount.getText();
                     if(currentGasAmount == ""){
-                        System.out.println("You have not placed amount of ballons.");
+                        System.out.println("You have not placed the amount of gas.");
                     }else{
-                        mainApp.Inflation(currentBallonAmount,);
+                        String currentGasAmountArray[] = currentGasAmount.split(",");
+                        ArrayList<String> A = new ArrayList<>(Arrays.asList(currentGasAmountArray));
+                        
+                        ArrayList<Integer> integerArrayGasAmount = new ArrayList<Integer>();
+                        for(String stringValue : A){integerArrayGasAmount.add(Integer.parseInt(stringValue));} //Goes through the arraylist<String> and turns it into an
+
+                        int intValueCurrentBallonAmount = Integer.parseInt(currentBallonAmount); //Converts the amount of ballons from string to int
+                        mainApp.Inflation(intValueCurrentBallonAmount,integerArrayGasAmount);
                     }
                 }
             }

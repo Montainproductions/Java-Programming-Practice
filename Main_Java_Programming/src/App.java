@@ -52,7 +52,7 @@ public class App{
         System.out.println(totalAmountOfMB);
     }
 
-    public void Inflation(int ballonAmount, ArrayList<Integer>gasArray){
+    public void Inflation(int ballonAmount, ArrayList<Integer> gasArray){
         /*
         * Problem: https://open.kattis.com/problems/inflation
         * Date Started: 09/05/2021
@@ -157,6 +157,8 @@ public class App{
         return sOfN;
         //System.out.println(sOfN);
     }
+
+
 
     public static void main(String[] args){App f = new App();};
 }
