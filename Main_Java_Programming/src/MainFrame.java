@@ -13,7 +13,7 @@ public class MainFrame extends JFrame{
     int buttonWidth = 95;
     int buttonHeight = 30;
 
-    //Dropdown starter page with array so that its easier to add more methods I do in the future instead of spending time looking for it.
+    //Array of all possible methods that can be chossen and used by the user.
     String[] possibleMethods = {"", "Balloon Inflation", "Internet Plan", "Minimum", "Mixed Fraction", "Range", "Stirlings Aproximation"};
     final JComboBox<String> reasonEntering = new JComboBox<String>(possibleMethods);
 
@@ -30,16 +30,18 @@ public class MainFrame extends JFrame{
 
         starterPage();
 
+        //Allow the gui to be closed through a butten.
         closeButton();
         myFrame.setLayout(null);
         myFrame.setVisible(true);
     }
 
     public void starterPage(){
-        reasonEntering.setVisible(true);
-        reasonEntering.setBounds(0, 0, buttonWidth, buttonHeight);
+        //Gives user the options that they can choose.
+        reasonEntering.setFocusable(false);
+        reasonEntering.setBounds(240, 0, 130, buttonHeight);
         myFrame.add(reasonEntering);
-        //methodChoosen();
+        methodChoosen();
     }
 
     public void nextPageSetUp(String problemToSolve){
@@ -110,6 +112,7 @@ public class MainFrame extends JFrame{
     public void stirlingsApproximationScreen(){}
 
     public void ballonInflationSendingInfo(){
+        //Will grab the strings in the two text entries and send them to the corrisponding ballon inglation method in the other file.
         JButton enterButton = new JButton("Enter");
         enterButton.setFocusable(false);
         enterButton.setBounds(180,400,buttonWidth,buttonHeight); //setBounds(X Coordinates, Y Coordinates, Width, Height)
@@ -118,6 +121,7 @@ public class MainFrame extends JFrame{
         enterButton.addActionListener(new ActionListener() {  
             public void actionPerformed(ActionEvent e) {
                 String currentBallonAmount = ballonAmount.getText();
+                //Checks if a ballon amount has been given else it sends a message.
                 if(currentBallonAmount == ""){
                     System.out.println("You have not placed the amount of ballons.");
                 }else{
@@ -142,7 +146,7 @@ public class MainFrame extends JFrame{
     public void methodChoosen(){
         JButton enterButton = new JButton("Enter");
         enterButton.setFocusable(false);
-        enterButton.setBounds(180,400,buttonWidth,buttonHeight); //setBounds(X Coordinates, Y Coordinates, Width, Height)
+        enterButton.setBounds(260,400,buttonWidth,buttonHeight); //setBounds(X Coordinates, Y Coordinates, Width, Height)
         myFrame.add(enterButton);
 
         

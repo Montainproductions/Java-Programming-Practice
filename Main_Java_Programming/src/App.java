@@ -19,7 +19,7 @@ public class App{
         int amountOfProblems = 0;
         for(int i = 0; i < numbers.length; i++){
 
-            //If the number is a continuase set then do the split it and find the amount of problems that it has
+            //If the number is a continuase set from x-y then do the split it and find the amount of problems that have to be solved.
             if(numbers[i].contains("-")) {
                 String[] rangeNumbers = numbers[i].split("-");
                 for (int v = 0; v < rangeNumbers.length; v+=2) {
@@ -57,13 +57,16 @@ public class App{
         Collections.sort(gasArray);
         float fraction = 1;
 
+        //Goes through each of the ballons sizes and then goes through each of the gas amount in canasters
         outerloop:
         for(float i=1; i<(ballonAmount+1); i++){
             for(int v = 0; v<gasArray.size();v++){
                 int currentGas = gasArray.get(v);
+                //Checks if it is possible to fill the ballon and does it.
                 if (currentGas<=i){
                     float placeHolder = currentGas/i;
                     if (placeHolder <= fraction){
+                        //Find and prints the lowest possible amount that a ballon will be inflated.
                         System.out.println("Final fraction: " + fraction);
                         fraction = placeHolder;
                     }
@@ -104,8 +107,8 @@ public class App{
     }
 
     public int min(int[] array){
-        //Check Statistics problem above
-        int lowestNumb = 1000000;
+        //Will find the lowest number in an array
+        int lowestNumb = Double.POSITIVE_INFINITY;
         for (int i : array) {
             if(i < lowestNumb){lowestNumb = i;}
         }
@@ -114,8 +117,8 @@ public class App{
     }
 
     public int max(int[] array){
-        //Check Statistics problem above
-        int largestNumb = -1000000;
+        //Will find the lowest number in an array
+        int largestNumb = Double.NEGATIVE_INFINITY;
         for (int i : array) {
             if(i > largestNumb){largestNumb = i;}
         }
@@ -123,7 +126,7 @@ public class App{
     }
 
     public int range(int largestNumb, int lowestNumb){
-        //Check Statistics problem above
+        //Will find the range inbetween two numbers
         int rangeNumb = largestNumb - lowestNumb;
 
         return rangeNumb;
@@ -141,19 +144,16 @@ public class App{
     }
 
     public int factorialOfN(int N){
+        //Will recursivly find the factorial of N (Though this does have the big notation of O(N!))
         if (N == 0){return 1;}
         else{return(N * factorialOfN(N-1));}
     }
 
     public double stirlingsEquation(int N) {
+        //Will find the stirling number which is a extreamly close aproximination of a factorial N but has a faster big notaion of O(n)
         double sqrRoot = Math.sqrt(2*Math.PI*N);
         double exponential = Math.pow(N, N)/Math.exp(N);
         double sOfN = sqrRoot * exponential;
         return sOfN;
-        //System.out.println(sOfN);
     }
-
-
-
-    //public static void main(String[] args){App f = new App();};
 }
